@@ -1,0 +1,6 @@
+{
+  "name": "GeoMonitor Ecuador - Red Sísmica Nacional & Monitoreo Geofísico",
+  "description": "Plataforma científica de monitoreo sísmico en tiempo real, análisis tectónico, vigilancia volcánica, fichas técnicas de eventos y alerta temprana para Ecuador y Latinoamérica.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

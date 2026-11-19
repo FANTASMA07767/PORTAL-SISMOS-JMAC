@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-surface: #101419;
+    --bg-surface-panel: #10161d;
+    --bg-surface-elevated: #141b23;
+    --bg-surface-card: #161f2b;
+    --bg-surface-canvas: #0a0e13;
+    --bg-surface-container-lowest: #0a0e13;
+    --magma-red: #ff3b30;
+    --magma-accent: #ff5a36;
+    --magma-dark: #2a1310;
+    --amber-volcanic: #ff8a3d;
+    --gold-institutional: #f59e0b;
+    --gold-andean: #ffd23d;
+    --jade-depth: #2dd4bf;
+    --jade-deep: #35c7a6;
+    --subduction-blue: #5b8def;
+    --cobalt-pacific: #2563eb;
+    --text-primary: #e8eef2;
+    --text-muted: #7f93a3;
+    --text-dim: #4d6070;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #101419;
+    color: #e0e2ea;
+    font-family: 'IBM Plex Sans', sans-serif;
+    overscroll-behavior: none;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0e13;
+}
+::-webkit-scrollbar-thumb {
+  background: #223040;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #324458;
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(255, 59, 48, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 59, 48, 0);
+  }
+}
+
+.live-pulse {
+  animation: pulse-dot 1.8s infinite;
+}
+
+@keyframes waveform-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-waveform {
+  animation: waveform-scroll 12s linear infinite;
+}
+
+/* Leaflet dark theme customizations */
+.leaflet-container {
+  background-color: #0a0e13 !important;
+  font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #141b23 !important;
+  color: #e8eef2 !important;
+  border: 1px solid #223040 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.8) !important;
+}
+
+.leaflet-popup-tip {
+  background: #141b23 !important;
+  border: 1px solid #223040 !important;
+}
+
+.leaflet-control-zoom a {
+  background: #141b23 !important;
+  color: #e8eef2 !important;
+  border-color: #223040 !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #1c2633 !important;
+  color: #ffd23d !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(10, 14, 19, 0.85) !important;
+  color: #7f93a3 !important;
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #ff8a3d !important;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+.font-mono-code {
+  font-family: 'IBM Plex Mono', monospace;
+}
+.font-sans-body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
