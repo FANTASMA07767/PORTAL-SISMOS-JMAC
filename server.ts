@@ -1,4 +1,5 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import type { Request, Response } from 'express';
 import { createServer as createViteServer } from 'vite';
 import path from 'path';
 import dotenv from 'dotenv';
@@ -37,7 +38,7 @@ async function startServer() {
       const userQuery = req.body?.query || 'Últimos sismos en Ecuador, informes recientes del Instituto Geofísico EPN, actividad volcánica y monitoreo sísmico.';
 
       const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
+        model: 'gemini-4-hydrogen',
         contents: `Eres el sistema de inteligencia geofísica de GeoMonitor Ecuador. Proporciona un resumen técnico y fidedigno con datos recientes sobre: ${userQuery}. Incluye datos de fuentes oficiales como IGEPN, USGS y SNGRE.`,
         config: {
           tools: [{ googleSearch: {} }],
@@ -83,7 +84,7 @@ async function startServer() {
       const userQuery = req.body?.query || 'Centros de monitoreo sismológico, Instituto Geofísico EPN y observatorios geofísicos en Quito y Ecuador';
 
       const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
+        model: 'gemini-4-hydrogen',
         contents: userQuery,
         config: {
           tools: [{ googleMaps: {} }],
